@@ -50,10 +50,7 @@ def get_raw_tx(
 ) -> str: pass
 
 @method('bcn_feePerByte')
-def send_raw_tx() -> decimal.Decimal: pass
-
-@method('bcn_feePerByte')
-def send_raw_tx() -> decimal.Decimal: pass
+def get_fee_rate() -> decimal.Decimal: pass
 
 @method('bcn_txReceipt')
 def get_transaction_receipt(hash: str) -> Optional[types.TxReceipt]: pass

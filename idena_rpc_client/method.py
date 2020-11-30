@@ -33,9 +33,20 @@ def parse_params(f, *args, **kwargs):
     # but this one need an object
     if len(params) == 1 and f.__name__ not in [
         'get_raw_tx', 'get_address_pending_transactions',
+        'send_dna', 'send_invite', 'change_profile',
+        'activate_invite_to_random_address',
     ]:
         return list(params.values())
+
     elif len(params) == 0:
+
+        # Becuase of strange behaviour of this api
+        if f.__name__ in [
+            'change_profile',
+            'activate_invite_to_random_address',
+        ]:
+            return [{}]
+
         return []
 
     return [dict(params)]
@@ -45,12 +56,21 @@ def parse_result(data: dict, type_: Any):
     if data is None:
         return
 
+    if type_ in [bool, int, float, str, bytes]:
+        try:
+            return type_(data)
+        except TypeError:
+            return type_(data[0])
+
     if 'from' in data:
         data['from_'] = data['from']
         del data['from']
 
     if isinstance(data, str):
         return type_(data)
+
+    if isinstance(data, list) and len(type_.__args__) == 1:
+        return [type_.__args__[0](**o) for o in data]
 
     if len(data) == 1:
         return type_(*data)

@@ -1,5 +1,6 @@
 import decimal
 from dataclasses import dataclass
+from datetime import datetime
 from typing import List, Optional
 
 
@@ -91,12 +92,93 @@ class TxEvent:
     data:      List[bytes]
 
 @dataclass
+class TxAddr:
+    TxHash:     str
+    Address:    str
+
+@dataclass
 class TxReceipt:
     contractAddress: str
-    success        : bool
-    gasUsed        : int
-    gasCost        : int
-    from_          : str
-    txHash         : str
-    error          : str
-    events         : List[TxEvent]
+    success:         bool
+    gasUsed:         int
+    gasCost:         int
+    from_:           str
+    txHash:          str
+    error:           str
+    events:          List[TxEvent]
+
+@dataclass
+class FlipWords:
+    words:  List[int]
+    used:   bool
+    id:     int
+
+@dataclass
+class Identity:
+    address:                str
+    profileHash:            str
+    stake:                  decimal.Decimal
+    invites:                int
+    age:                    int
+    state:                  str
+    pubkey:                 str
+    requiredFlips:          int
+    availableFlips:         int
+    flipKeyWordPairs:       Optional[List[FlipWords]]
+    madeFlips:              int
+    totalQualifiedFlips:    int
+    totalShortFlipPoints:   float
+    flips:                  Optional[List[str]]
+    online:                 bool
+    generation:             int
+    code:                   bytes
+    invitees:               Optional[List[TxAddr]]
+    penalty:                decimal.Decimal
+    lastValidationFlags:    Optional[List[str]]
+
+@dataclass
+class State:
+    name:   str
+
+@dataclass
+class Balance:
+    stake:   decimal.Decimal
+    balance: decimal.Decimal
+    nonce:   int
+
+@dataclass
+class Invite:
+    hash:       str
+    receiver:   str
+    key:        str
+
+@dataclass
+class Epoch:
+    epoch:                  int
+    nextValidation:         datetime
+    currentPeriod:          str
+    currentValidationStart: datetime
+
+@dataclass
+class CeremonyIntervals:
+    FlipLotteryDuration:  float
+    ShortSessionDuration: float
+    LongSessionDuration:  float
+
+@dataclass
+class ChangeProfile:
+    txHash: str
+    hash:   str
+
+@dataclass
+class Profile:
+    info:       bytes
+    nickname:   str
+
+@dataclass
+class ActivateInviteToRandomAddr:
+    hash:       str
+    address:    str
+    key:        str
+
+

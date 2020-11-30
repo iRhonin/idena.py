@@ -1,4 +1,6 @@
-from idena_rpc_client import client, types
+from pudb import set_trace; set_trace()
+
+from idena_rpc_client import client
 
 
 client.init('http://51.178.166.157:9009/', '1')
@@ -11,9 +13,29 @@ client.init('http://51.178.166.157:9009/', '1')
 #r = client.blockchain.get_address_transactions('0xa5ba57a22eff691d32f7cca57b13e785463af3e5')
 #r = client.blockchain.get_address_pending_transactions('0xa5ba57a22eff691d32f7cca57b13e785463af3e5')
 #r = client.blockchain.get_burnt_coins()
-from pudb import set_trace; set_trace()
-r = client.blockchain.get_raw_tx(
-    from_='0xa5ba57a22eff691d32f7cca57b13e785463af3e5',
-    maxFee=1,
-)
+#r = client.blockchain.get_raw_tx(
+#    from_='0xa5ba57a22eff691d32f7cca57b13e785463af3e5',
+#    maxFee=1,
+#)
+#r = client.dna.get_identity('0xAB6E36f38E0bDAC88e53640c1313C1944A644fcC')
+#r = client.dna.get_identities()
+#r = client.dna.get_current_process()
+#r = client.dna.get_coinbase_address()
+#r = client.dna.get_balance('0xAB6E36f38E0bDAC88e53640c1313C1944A644fcC')
+#r = client.dna.send_dna(
+#    from_='0xa5ba57a22eff691d32f7cca57b13e785463af3e5',
+#    to='0xa5ba57a22eff691d32f7cca57b13e785463af3e5',
+#    maxFee=1,
+#)
+#r = client.dna.send_invite(
+#    to='0xa5ba57a22eff691d32f7cca57b13e785463af3e5',
+#)
+#r = client.dna.kill_identity()
+#r = client.dna.get_epoch()
+#r = client.dna.get_ceremony_intervals()
+#r = client.dna.export_key('asdas')
+#r = client.dna.change_profile(nickname='rhonin')
+#r = client.dna.get_profile('0xa5ba57a22eff691d32f7cca57b13e785463af3e5')
+#r = client.dna.activate_invite_to_random_address()
+r = client.dna.isValidationReady()
 print(r)
