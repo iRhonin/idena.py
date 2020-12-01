@@ -227,4 +227,22 @@ class Peer(NamedTuple):
     id:     str
     addr:   str
 
+class Stake(NamedTuple):
+    Hash: str
+    Stake: decimal.Decimal
+
+class DynamicArg(NamedTuple):
+    index:  int
+    format: str
+    value:  str
+
+class ContractTxReceipt:
+    contract:   str
+    success:    bool
+    gasUsed:    int
+    gasCost:    decimal.Decimal
+    txHash:     str
+    txFee:      decimal.Decimal
+    error:      str
+
 

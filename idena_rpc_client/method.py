@@ -21,7 +21,11 @@ SPECIAL_FUNCS = [
     'send_dna', 'send_invite', 'change_profile',
     'activate_invite_to_random_address',
     'flip_submit', 'submit_short_answers',
-    'submit_long_answers',
+    'submit_long_answers', 'estimate_deploy',
+    'estimate_call', 'estimate_terminate',
+    'deploy_contract', 'call_contract', 'terminate_contract',
+    'readonly_call_contract', 'subscribe_to_contract_event',
+    'unsubscribe_from_contract_event', 'read_events',
 ]
 
 def parse_params(f, *args, **kwargs):
