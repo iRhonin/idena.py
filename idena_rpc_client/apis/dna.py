@@ -9,7 +9,6 @@ from ..method import method
 @method('dna_identity')
 def get_identity(address: str) -> types.Identity: pass
 
-
 @method('dna_identities')
 def get_identities() -> List[types.Identity]: pass
 

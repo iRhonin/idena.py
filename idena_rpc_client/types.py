@@ -1,7 +1,7 @@
 import decimal
 from dataclasses import dataclass
 from datetime import datetime
-from typing import List, Optional
+from typing import List, Optional, NamedTuple
 
 
 @dataclass
@@ -170,6 +170,8 @@ class ChangeProfile:
     txHash: str
     hash:   str
 
+FlipSubmit = ChangeProfile
+
 @dataclass
 class Profile:
     info:       bytes
@@ -181,4 +183,42 @@ class ActivateInviteToRandomAddr:
     address:    str
     key:        str
 
+@dataclass
+class FlipHashes:
+    hash:      str
+    ready:     bool
+    extra:     bool
+    available: bool
 
+@dataclass
+class Flip:
+    hex:        str
+    privateHex: str
+
+@dataclass
+class RawFlip:
+    publicHex:  str
+    privateHex: str
+
+@dataclass
+class Answer:
+    none  = '0'
+    left  = '1'
+    right = '2'
+
+class Grade:
+    gradeNone      = '0'
+    gradeReported  = '1'
+    gradeD         = '2'
+    gradeC         = '3'
+    gradeB         = '4'
+    gradeA         = '5'
+
+class FlipAnswer(NamedTuple):
+    hash:       str
+    grade:      Grade
+    answer:     Answer
+    wrongWords: List[bool]
+
+class FlipAnswers(NamedTuple):
+    answers:  List[FlipAnswer]

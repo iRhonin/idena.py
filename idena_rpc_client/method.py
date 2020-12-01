@@ -13,6 +13,17 @@ RPC_NODE: str = os.environ.get('IDENA_RPC_NODE')
 API_KEY: str = os.environ.get('IDENA_API_KEY')
 
 
+# TODO: theese methods differ from other single arg methods
+# the other methods accept a single item list as param
+# but this one need an object
+SPECIAL_FUNCS = [
+    'get_raw_tx', 'get_address_pending_transactions',
+    'send_dna', 'send_invite', 'change_profile',
+    'activate_invite_to_random_address',
+    'flip_submit', 'submit_short_answers',
+    'submit_long_answers',
+]
+
 def parse_params(f, *args, **kwargs):
     bind_params = signature(f).bind(*args, **kwargs)
     bind_params.apply_defaults()
@@ -28,23 +39,13 @@ def parse_params(f, *args, **kwargs):
         else:
             params[k] = v
 
-    # TODO: theese methods differ from other single arg methods
-    # the other methods accept a single item list as param
-    # but this one need an object
-    if len(params) == 1 and f.__name__ not in [
-        'get_raw_tx', 'get_address_pending_transactions',
-        'send_dna', 'send_invite', 'change_profile',
-        'activate_invite_to_random_address',
-    ]:
+    if len(params) == 1 and f.__name__ not in SPECIAL_FUNCS:
         return list(params.values())
 
     elif len(params) == 0:
 
         # Becuase of strange behaviour of this api
-        if f.__name__ in [
-            'change_profile',
-            'activate_invite_to_random_address',
-        ]:
+        if f.__name__ in SPECIAL_FUNCS:
             return [{}]
 
         return []
