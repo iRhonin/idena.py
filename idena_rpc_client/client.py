@@ -1,4 +1,4 @@
-from .apis import blockchain, dna, flip, net
+from .apis import blockchain, dna, flip, net, account
 
 
 def init(rpc_node, api_key):

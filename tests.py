@@ -42,7 +42,7 @@ client.init('http://51.178.166.157:9009/', '1')
 #        types.FlipAnswer('1','2','3',[False]),
 #    ],
 #))
-r = client.net.get_peers()
-from pudb import set_trace; set_trace()
+#r = client.net.get_peers()
 #r = client.net.get_ipfs_addr()
+r = client.account.lock_account('0x019da3f48dff68cf73abc52ccd1f9461ea8c71e5')
 print(r)
