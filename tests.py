@@ -36,10 +36,13 @@ client.init('http://51.178.166.157:9009/', '1')
 #r = client.dna.get_profile('0xa5ba57a22eff691d32f7cca57b13e785463af3e5')
 #r= client.dna.activate_invite_to_random_address()
 #r = client.dna.isValidationReady()
-r = client.flip.get_raw_flip('123')
+#r = client.flip.get_raw_flip('123')
 #r = client.flip.submit_short_answers(types.FlipAnswers(
 #    answers=[
 #        types.FlipAnswer('1','2','3',[False]),
 #    ],
 #))
+r = client.net.get_peers()
+from pudb import set_trace; set_trace()
+#r = client.net.get_ipfs_addr()
 print(r)

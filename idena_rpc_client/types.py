@@ -222,3 +222,9 @@ class FlipAnswer(NamedTuple):
 
 class FlipAnswers(NamedTuple):
     answers:  List[FlipAnswer]
+
+class Peer(NamedTuple):
+    id:     str
+    addr:   str
+
+
