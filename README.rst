@@ -12,16 +12,10 @@ Please checkout API refrence for avaliable APIs.
 
 * Highly inspired by `Web3.py <https://github.com/ethereum/web3.py>`_ and `cookiecutter-pypackage <https://github.com/briggySmalls/cookiecutter-pypackage>`_.
 
-.. toctree::
-   quickstart
-   :maxdepth: 2
-   :caption: Contents:
-
 Installation
 ------------
 
-Idena.py can be installed (preferably in a :ref:`virtualenv <setup_environment>`)
-using ``pip`` as follows:
+Idena.py can be installed using ``pip`` as follows:
 
 .. code-block:: shell
 
@@ -59,7 +53,8 @@ Set `IDENA_RPC_NODE` and `IDENA_API_KEY` envars:
 
 Getting Blockchain Info
 -----------------------
-   .. code-block:: python
+
+.. code-block:: python
 
     >>> client.blockchain.get_last_block()
    Block(coinbase='0xbe854231db69ab042073b7ff8309ae3ee265a40f', 
@@ -74,11 +69,3 @@ Getting Blockchain Info
       flags=['OfflinePropose'], 
       isEmpty=False, 
       offlineAddress='0x0df427ad7e1906ab4fcc5fd31118932256f5dc7a')
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
