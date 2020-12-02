@@ -21,6 +21,7 @@ project = 'Idena Client'
 copyright = '2020, Arash Fatahzade'
 author = 'Arash Fatahzade'
 
+autodoc_mock_imports = ['autoapi']
 
 # -- General configuration ---------------------------------------------------
 
