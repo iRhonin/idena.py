@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from idena_rpc_client.method import parse_result
+from idena.method import parse_result
 
 
 def test_parse_result():

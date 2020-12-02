@@ -7,7 +7,13 @@ from .apis import \
     net
 
 
-def init(rpc_node, api_key):
+def init(rpc_node: str, api_key: str) -> None:
+    """Initialization
+
+    Args:
+        rpc_node (str): URL of rpc node
+        api_key (str): API-Key
+    """
     from . import method
 
     method.RPC_NODE = rpc_node

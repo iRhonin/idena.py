@@ -1,4 +1,4 @@
-from idena_rpc_client import client, method
+from idena import client, method
 
 
 def test_init():

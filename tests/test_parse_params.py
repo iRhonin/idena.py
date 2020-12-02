@@ -1,4 +1,4 @@
-from idena_rpc_client.method import parse_params
+from idena.method import parse_params
 
 def f0(x: int = 0):
     pass

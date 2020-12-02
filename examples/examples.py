@@ -1,8 +1,9 @@
-from idena_rpc_client import client
+from idena import client
 
 
-client.init('http://51.178.166.157:9009/', '1')
-#r = client.blockchain.get_last_block()
+client.init('http://localhost/', '1')
+
+r = client.blockchain.get_last_block()
 #r = client.blockchain.get_block_by_height(2129472)
 #r = client.blockchain.get_block_by_hash('0xc32fc04e04b7d1d86116f4f586d2c68bdd00f71203789a810eebb45fa5abf253')
 #r = client.blockchain.get_transaction('0xe587a3cda712ae8cd8c1e318cd40acfe07f9d1827675af498166363f4348d91c')
@@ -45,5 +46,6 @@ client.init('http://51.178.166.157:9009/', '1')
 #r = client.net.get_peers()
 #r = client.net.get_ipfs_addr()
 #r = client.account.lock_account('0x019da3f48dff68cf73abc52ccd1f9461ea8c71e5')
-r = client.contract.get_stake('0x019da3f48dff68cf73abc52ccd1f9461ea8c71e5')
+#r = client.contract.get_stake('0x019da3f48dff68cf73abc52ccd1f9461ea8c71e5')
+
 print(r)
