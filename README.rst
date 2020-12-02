@@ -28,6 +28,7 @@ using ``pip`` as follows:
    $ pip install idena
 
 For the development, clone the repository then:
+
 .. code-block:: shell
 
    $ pip install -e .

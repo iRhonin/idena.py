@@ -20,14 +20,14 @@ Please checkout API refrence for avaliable APIs.
 Installation
 ------------
 
-Idena.py can be installed (preferably in a :ref:`virtualenv <setup_environment>`)
-using ``pip`` as follows:
+Idena.py can be installed using ``pip`` as follows:
 
 .. code-block:: shell
 
    $ pip install idena
 
 For the development, clone the repository then:
+
 .. code-block:: shell
 
    $ pip install -e .
