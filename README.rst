@@ -55,8 +55,9 @@ Getting Blockchain Info
 -----------------------
 
 .. code-block:: python
-
-    >>> client.blockchain.get_last_block()
+   
+   >>> client.blockchain.get_last_block()
+   
    Block(coinbase='0xbe854231db69ab042073b7ff8309ae3ee265a40f', 
       hash='0xa88e6ab305d7ee311ad2de35338cdbf7e664d860709e5a53f0307baeeaa6f968', 
       parentHash='0xe324a208892241e0294e5a6334965660375dda7a3ad8d8a42a5f3f2ef2857a22', 
