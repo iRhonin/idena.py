@@ -6,15 +6,18 @@
 Idena Client
 ===================================
 
+.. image:: https://travis-ci.com/iRhonin/idena.py.svg?branch=main
+    :target: https://travis-ci.com/iRhonin/idena.py
+
 This is Python wrapper for Idene Node.
 
 Please checkout API refrence for avaliable APIs.
 
-* Highly inspired by `Web3.py <https://github.com/ethereum/web3.py>`_ and `cookiecutter-pypackage <https://github.com/briggySmalls/cookiecutter-pypackage>`_.
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+* Highly inspired by `Web3.py <https://github.com/ethereum/web3.py>`_ and `cookiecutter-pypackage <https://github.com/briggySmalls/cookiecutter-pypackage>`_.
 
 Installation
 ------------

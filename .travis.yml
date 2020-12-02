@@ -11,10 +11,9 @@ jobs:
     - pip install poetry
     - poetry install
     - poetry config http-basic.pypi $PYPI_USER $PYPI_PASSWORD
-    - poetry build
     python: 3.8
     deploy:
       provider: script
-      script: poetry publish
+      script: poetry publish --build 
       on:
         tags: true

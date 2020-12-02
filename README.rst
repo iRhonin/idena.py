@@ -6,9 +6,10 @@
 Idena Client
 ===================================
 
-This is Python wrapper for Idene Node.
+.. image:: https://travis-ci.com/iRhonin/idena.py.svg?branch=main
+    :target: https://travis-ci.com/iRhonin/idena.py
 
-Please checkout API refrence for avaliable APIs.
+This is Python wrapper for Idene Node.
 
 * Highly inspired by `Web3.py <https://github.com/ethereum/web3.py>`_ and `cookiecutter-pypackage <https://github.com/briggySmalls/cookiecutter-pypackage>`_.
 
