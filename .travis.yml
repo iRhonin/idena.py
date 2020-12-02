@@ -1,27 +1,21 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
 python:
-  - 3.8
-  - 3.7
-
-# command to install dependencies
+- 3.8
+- 3.7
 install: pip install -U tox-travis
-
-# command to run tests
 script: tox
-
-# Jobs (with stages)
 jobs:
   include:
-    - stage: deploy
-      script: poetry run invoke docs
-      before_script:
-        - pip install poetry
-        - poetry install
-      python: 3.8
-      deploy:
-        provider: pypi
-        user: rhonin
-        on:
-          tags: true
+  - stage: deploy
+    before_script:
+    - pip install poetry
+    - poetry install
+    - poetry build -f sdist
+    python: 3.8
+    deploy:
+      provider: pypi
+      user: rhonin
+      on:
+        tags: true
+      password:
+        secure: vKNoRDpoGQRF9Qg6ANdQddynCr09nxLXCrWpRRdRMo4oF+iMsQ9sXQvMYGy1GEZe3zQvMpWiG5iuOXDi88versIR9LaSGIJP4j2x4yhFP08rPw6mBr9HKxqKVVr/fFj0kPEu0CJ7MIeKT2te5rhEf5iQxeOrFiayZ3RHNsFaKrAWvBD33+d3lBHB3VTi7fZKlXofgY7TOMH9KEypDZGyKnHTH9PdefB8URP0KCcGyRmX5C5eBkQtzlpYCCd1z5+WfBjn4QNdqbGUhrrfwL24FVEk9GlMbVg8NHevgKv0tHVGvSqzZ2qTlFlkifY6zWeECwn98BF4zwvki39itRJSgaERrhQlwU9TiFIKuP0jWwqFUEkuxa8yCvDopbT2Meq4wkCcG3InKDW1+LJNuL44iDRNS0FD1OPtAt2l7NqnFvCjOmliqf2QkntkIwhCsl8UJZWHbiBoNFTMi5mZ6Tgptmf2nzLJ8smK+OvIN1hAcEqKJG9neXOPI3t61b93OiVvyG1pUhQTyF9BNY0MxD82L3kyT7/FKijAvR76BXx5Q7DjsqnP7LfIYGPThhG6i3qCmEhvIPE6Y2OrsO91FuDo9Jq4b6sGeCG6fqd8NlMX9VYXw0UhssZIWQj/sJJrKmAF6x09iE4dgShQzK2FsH3Cz+iAOE1uiRbLVO9nUUUuMms=
