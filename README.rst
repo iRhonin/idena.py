@@ -25,7 +25,7 @@ For the development, clone the repository then:
 
 .. code-block:: shell
 
-   $ pip install -e .
+   $ poetry install
 
 
 Using Idena
