@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Idena Client
-===================================
+============
 
 .. image:: https://travis-ci.com/iRhonin/idena.py.svg?branch=main
     :target: https://travis-ci.com/iRhonin/idena.py
@@ -36,12 +36,12 @@ For the development, clone the repository then:
 
 
 Using Idena
-----------
+-----------
 
 This library depends on a connection to an Idena node and there are 2 ways to configure them. 
 
 Calling `client.init` 
-**************************
+*********************
 
 .. code-block:: python
 
@@ -50,7 +50,7 @@ Calling `client.init`
 
 
 Setting environment variables
-**************************
+*****************************
 Set `IDENA_RPC_NODE` and `IDENA_API_KEY` envars:
 
 .. code-block:: sh
