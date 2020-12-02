@@ -7,15 +7,14 @@ script: tox
 jobs:
   include:
   - stage: deploy
-    before_script:
+    before_deploy:
     - pip install poetry
     - poetry install
-    - poetry build -f sdist
+    - poetry config http-basic.pypi $PYPI_USER $PYPI_PASSWORD
+    - poetry build
     python: 3.8
     deploy:
-      provider: pypi
-      user: rhonin
+      provider: script
+      script: poetry publish
       on:
         tags: true
-      password:
-        secure: vKNoRDpoGQRF9Qg6ANdQddynCr09nxLXCrWpRRdRMo4oF+iMsQ9sXQvMYGy1GEZe3zQvMpWiG5iuOXDi88versIR9LaSGIJP4j2x4yhFP08rPw6mBr9HKxqKVVr/fFj0kPEu0CJ7MIeKT2te5rhEf5iQxeOrFiayZ3RHNsFaKrAWvBD33+d3lBHB3VTi7fZKlXofgY7TOMH9KEypDZGyKnHTH9PdefB8URP0KCcGyRmX5C5eBkQtzlpYCCd1z5+WfBjn4QNdqbGUhrrfwL24FVEk9GlMbVg8NHevgKv0tHVGvSqzZ2qTlFlkifY6zWeECwn98BF4zwvki39itRJSgaERrhQlwU9TiFIKuP0jWwqFUEkuxa8yCvDopbT2Meq4wkCcG3InKDW1+LJNuL44iDRNS0FD1OPtAt2l7NqnFvCjOmliqf2QkntkIwhCsl8UJZWHbiBoNFTMi5mZ6Tgptmf2nzLJ8smK+OvIN1hAcEqKJG9neXOPI3t61b93OiVvyG1pUhQTyF9BNY0MxD82L3kyT7/FKijAvR76BXx5Q7DjsqnP7LfIYGPThhG6i3qCmEhvIPE6Y2OrsO91FuDo9Jq4b6sGeCG6fqd8NlMX9VYXw0UhssZIWQj/sJJrKmAF6x09iE4dgShQzK2FsH3Cz+iAOE1uiRbLVO9nUUUuMms=
