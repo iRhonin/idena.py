@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from typing import NamedTuple
 
 from idena.method import parse_result
 
@@ -9,8 +9,7 @@ def test_parse_result():
         'from': '0x01',
     }
 
-    @dataclass
-    class SampleType:
+    class SampleType(NamedTuple):
         syncing: bool
         from_: str
 
