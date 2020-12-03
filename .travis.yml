@@ -2,6 +2,7 @@ language: python
 python:
 - 3.8
 - 3.7
+- 3.6
 install: pip install -U tox-travis
 script: tox
 jobs:
@@ -11,7 +12,7 @@ jobs:
     - pip install poetry
     - poetry install
     - poetry config http-basic.pypi $PYPI_USER $PYPI_PASSWORD
-    python: 3.8
+    python: 3.6
     deploy:
       provider: script
       script: poetry publish --build 
