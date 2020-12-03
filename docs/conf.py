@@ -66,4 +66,4 @@ autodoc_typehints = 'description'
 
 html_theme = 'sphinx_rtd_theme'
 
-version = "0.2.1"
+version = "0.2.2"

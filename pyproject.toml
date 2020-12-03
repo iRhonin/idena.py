@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "idena"
-version = "0.2.1"
+version = "0.2.2"
 description = "Idena RPC client"
 authors = ["Arash Fatahzade <fatahzade@gmail.com>"]
 repository = "https://github.com/iRhonin/idena.py"
