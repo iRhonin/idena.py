@@ -4,8 +4,7 @@ from datetime import datetime
 from typing import List, Optional, NamedTuple
 
 
-@dataclass
-class Block:
+class Block(NamedTuple):
     coinbase:       str
     hash:           str
     parentHash:     str
@@ -19,8 +18,7 @@ class Block:
     isEmpty:        bool
     offlineAddress: str
 
-@dataclass
-class Transaction:
+class Transaction(NamedTuple):
     hash:           str
     type:           str
     from_:          str
@@ -35,27 +33,23 @@ class Transaction:
     usedFee:        str
     timestamp:      int
 
-@dataclass
-class Sync:
+class Sync(NamedTuple):
     syncing:        bool
     currentBlock:   int
     highestBlock:   int
     wrongTime:      bool
     genesisBlock:   int
 
-@dataclass
-class AddressTransactions:
+class AddressTransactions(NamedTuple):
     token:          Optional[str]
     transactions:   Optional[List[Transaction]]
 
-@dataclass
-class BurntCoins:
+class BurntCoins(NamedTuple):
     address:        str
     amount:         decimal.Decimal
     key:            str
 
-@dataclass
-class BaseTxArgs:
+class BaseTxArgs(NamedTuple):
     nonce:          int             = None
     epoch:          int             = None
 
@@ -75,7 +69,6 @@ class TxType:
     BurnTx                  = 12
     ChangeProfileTx         = 13
 
-@dataclass
 class SendTxArgs(BaseTxArgs):
     from_:          str             = None
     to:             str             = None
@@ -86,18 +79,15 @@ class SendTxArgs(BaseTxArgs):
     useProto:       bool            = None
     type:           TxType          = TxType.SendTx
 
-@dataclass
-class TxEvent:
+class TxEvent(NamedTuple):
     eventName: str
     data:      List[bytes]
 
-@dataclass
-class TxAddr:
+class TxAddr(NamedTuple):
     TxHash:     str
     Address:    str
 
-@dataclass
-class TxReceipt:
+class TxReceipt(NamedTuple):
     contractAddress: str
     success:         bool
     gasUsed:         int
@@ -107,14 +97,12 @@ class TxReceipt:
     error:           str
     events:          List[TxEvent]
 
-@dataclass
-class FlipWords:
+class FlipWords(NamedTuple):
     words:  List[int]
     used:   bool
     id:     int
 
-@dataclass
-class Identity:
+class Identity(NamedTuple):
     address:                str
     profileHash:            str
     stake:                  decimal.Decimal
@@ -136,72 +124,60 @@ class Identity:
     penalty:                decimal.Decimal
     lastValidationFlags:    Optional[List[str]]
 
-@dataclass
-class State:
+class State(NamedTuple):
     name:   str
 
-@dataclass
-class Balance:
+class Balance(NamedTuple):
     stake:   decimal.Decimal
     balance: decimal.Decimal
     nonce:   int
 
-@dataclass
-class Invite:
+class Invite(NamedTuple):
     hash:       str
     receiver:   str
     key:        str
 
-@dataclass
-class Epoch:
+class Epoch(NamedTuple):
     epoch:                  int
     nextValidation:         datetime
     currentPeriod:          str
     currentValidationStart: datetime
 
-@dataclass
-class CeremonyIntervals:
+class CeremonyIntervals(NamedTuple):
     FlipLotteryDuration:  float
     ShortSessionDuration: float
     LongSessionDuration:  float
 
-@dataclass
-class ChangeProfile:
+class ChangeProfile(NamedTuple):
     txHash: str
     hash:   str
 
 FlipSubmit = ChangeProfile
 
-@dataclass
-class Profile:
+class Profile(NamedTuple):
     info:       bytes
     nickname:   str
 
-@dataclass
-class ActivateInviteToRandomAddr:
+class ActivateInviteToRandomAddr(NamedTuple):
     hash:       str
     address:    str
     key:        str
 
-@dataclass
-class FlipHashes:
+class FlipHashes(NamedTuple):
     hash:      str
     ready:     bool
     extra:     bool
     available: bool
 
-@dataclass
-class Flip:
+class Flip(NamedTuple):
     hex:        str
     privateHex: str
 
-@dataclass
-class RawFlip:
+class RawFlip(NamedTuple):
     publicHex:  str
     privateHex: str
 
-@dataclass
-class Answer:
+class Answer(NamedTuple):
     none  = '0'
     left  = '1'
     right = '2'
