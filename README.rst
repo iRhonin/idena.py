@@ -3,6 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
 Idena Client
 ============
 
@@ -10,6 +11,8 @@ Idena Client
     :target: https://travis-ci.com/iRhonin/idena.py
 
 This is Python wrapper for Idene Node.
+
+Documention: https://idenapy.readthedocs.io
 
 * Highly inspired by `Web3.py <https://github.com/ethereum/web3.py>`_ and `cookiecutter-pypackage <https://github.com/briggySmalls/cookiecutter-pypackage>`_.
 
