@@ -32,18 +32,18 @@ For the development, clone the repository then:
 Using Idena
 -----------
 
-This library depends on a connection to an Idena node and there are 2 ways to configure them. 
+Setup IDENA node: 
 
-Calling `client.init` 
+1. Calling `client.init()` 
 *********************
 
 .. code-block:: python
 
-   >>> from idena import client
-   >>> client.init('http://localhost:9009/', 'api-key')
+   from idena import client
+   client.init('http://localhost:9009/', 'api-key')
 
 
-Setting environment variables
+2. Setting environment variables
 *****************************
 
 Set `IDENA_RPC_NODE` and `IDENA_API_KEY` envars:
@@ -58,9 +58,9 @@ Getting Blockchain Info
 
 .. code-block:: python
    
-   >>> client.blockchain.get_last_block()
+   client.blockchain.get_last_block()
       
-      Block(coinbase='0xbe854231db69ab042073b7ff8309ae3ee265a40f', 
+   > Block(coinbase='0xbe854231db69ab042073b7ff8309ae3ee265a40f', 
          hash='0xa88e6ab305d7ee311ad2de35338cdbf7e664d860709e5a53f0307baeeaa6f968', 
          parentHash='0xe324a208892241e0294e5a6334965660375dda7a3ad8d8a42a5f3f2ef2857a22', 
          height=2159398, 
